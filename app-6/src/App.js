@@ -8,7 +8,7 @@ export default class App extends Component {
 
     this.state = {
       taskInput: "",
-      listInput: []
+      taskArray: []
     };
 
     this.handleInput = this.handleInput.bind(this);
@@ -22,7 +22,7 @@ export default class App extends Component {
 
   addTodoList() {
     this.setState({
-      listInput: [this.state.taskInput, ...this.state.listInput],
+      taskArray: [this.state.taskInput, ...this.state.taskArray],
       taskInput: ""
     });
   }
@@ -30,7 +30,7 @@ export default class App extends Component {
 
 
   render() {
-    let listInput = this.state.listInput.map(function (element, i) {
+    let listInput = this.state.taskArray.map(function (element, i) {
       return <Todo key={i} task={element} />
     });
 
